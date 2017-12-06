@@ -1,0 +1,29 @@
+
+<html>
+	<head><title>test</title></head>
+	<body>
+		    <form id="form1" method="POST" name="form1">
+			            <p>
+				    <input type="hidden" name="id" id="id" value="0"/>
+
+				    <label for="first_name">First Name:</label>
+				    <input type="text" name="first_name" id="fname"></p>
+
+				    <p><label for="last_name">Last Name:</label>
+					<input type="text" name="last_name" id="lname"></p>
+
+					<input id="submit" value="Submit" type="submit">
+						        </form>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+    		$(document).ready(function(){
+	            // click on button submit
+	            $("#submit").on('click', function(){
+			    $.post('/testform', {id: 1 + Math.floor(Math.random() * 100000), last_name: $("#lname").val(), first_name: $("#fname").val() });
+		    })
+		});
+
+							</script>
+	</body>
+</html>
